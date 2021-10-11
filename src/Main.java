@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("## --- ##");
-        int[] byteCode = {
+        int[] printByteCode = {
                 Opcode.PUSH_1,
                 Opcode.PUSH_1,
                 Opcode.ADD,
@@ -9,14 +9,22 @@ public class Main {
                 Opcode.HALT
         };
 
-        int[] byteCode2 = {
+        int[] additionByteCode = {
                 Opcode.ICONST, 10,
                 Opcode.PUSH_1,
                 Opcode.ADD,
                 Opcode.PRINT,
                 Opcode.HALT
         };
-        VM vm = new VM(byteCode2, 0);
+
+        int[] subtractionByteCode = {
+                Opcode.ICONST, 10,
+                Opcode.PUSH_1,
+                Opcode.SUB,
+                Opcode.PRINT,
+                Opcode.HALT
+        };
+        VM vm = new VM(subtractionByteCode, 0, 0);
         vm.run();
     }
 }
