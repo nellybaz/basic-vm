@@ -56,6 +56,12 @@ public class VM {
                     this.stack[++this.SP] = x + y;
                 }
 
+                case Opcode.SUB -> {
+                    int x = this.stack[this.SP--];
+                    int y = this.stack[this.SP--];
+                    this.stack[++this.SP] = y - x;
+                }
+
                 case Opcode.PRINT ->
                         System.out.println(this.stack[this.SP--]);
 
